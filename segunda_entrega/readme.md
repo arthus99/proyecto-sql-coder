@@ -4,19 +4,19 @@
 
 ## Segunda Entrega.
 
-El archivo de la primera entrega: [click aquí](./primera_entrega/readme.md).
+El archivo de la primera entrega: [click aquí](../primera_entrega/readme.md).
  
-Correcciones Primera Entrega : [Click aquí](./segunda_entrega/correcciones.md).
+Correcciones Primera Entrega : [Click aquí](./correcciones.md).
 
 ## Procedimiento para probar los objetos:  
- 1. Correr el script [miChangarro.sql](./segunda_entrega/scripts/miChangarro.sql)
+ 1. Correr el script [miChangarro.sql](./scripts/miChangarro.sql)
  2. Cargar los datos que se encuntran en la carpeta csv.
 
  | Tabla | Archivo |
  |----------|----------|
- | departments | [departments.csv](./segunda_entrega/csv/departments.csv) |
- | departments_closure |  [departments_closure.csv](./segunda_entrega/csv/departments_closure.csv) |
- | interests | [interests.csv](./segunda_entrega/csv/interests.csv) |
+ | departments | [departments.csv](./csv/departments.csv) |
+ | departments_closure |  [departments_closure.csv](./csv/departments_closure.csv) |
+ | interests | [interests.csv](./csv/interests.csv) |
 
 ## Se crearon los siguientes Objetos:
 
@@ -33,7 +33,7 @@ Y este sp para pruebas:
 	- sp_test_cycle_simulation	
 	
 # Pruebas: 
-Esta información se encuentra en el archivo [segunda_entrega/scripts/test.sql](./segunda_entrega/scripts/test.sql)
+Esta información se encuentra en el archivo [segunda_entrega/scripts/test.sql](./scripts/test.sql)
 
 **vistas**:
  
@@ -107,4 +107,4 @@ Muestra la rama del id Correspondiente.
 
 El diagrama de la BD queda: 
 
-![imagen](./segunda_entrega/images/michangarro.png)
+![imagen](./images/michangarro.png)
