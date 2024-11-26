@@ -1,0 +1,65 @@
+-- Puede verificar los objetos con los Querys siguientes:
+
+-- VERIFICACION DE IMPORTACION
+
+SELECT 
+    table_name AS `Table`, 
+    table_rows AS `Row Count`
+FROM 
+    information_schema.tables
+WHERE 
+    table_schema = 'michangarro'
+ORDER BY 
+    table_rows DESC;
+
+-- VERIFICACION DE VISTAS
+SELECT 
+    TABLE_NAME AS `Objeto`,
+    TABLE_TYPE AS `Tipo`
+FROM 
+    INFORMATION_SCHEMA.TABLES
+WHERE 
+    TABLE_SCHEMA = 'michangarro' 
+    AND TABLE_TYPE = 'VIEW'
+ORDER BY TABLE_NAME;
+
+-- VERIFICACION DE PROCEDURES
+
+SELECT 
+    ROUTINE_NAME AS `Objeto`,
+    ROUTINE_TYPE AS `Tipo`
+FROM 
+    INFORMATION_SCHEMA.ROUTINES
+WHERE 
+    ROUTINE_SCHEMA = 'michangarro' 
+    AND ROUTINE_TYPE = 'PROCEDURE'
+ORDER BY 
+    ROUTINE_NAME;
+
+-- VERIFICACION DE FUNCIONES
+SELECT 
+    ROUTINE_NAME AS `Función`,
+    DATA_TYPE AS `Tipo de Retorno`
+FROM 
+    INFORMATION_SCHEMA.ROUTINES
+WHERE 
+    ROUTINE_SCHEMA = 'michangarro' 
+    AND ROUTINE_TYPE = 'FUNCTION'
+ORDER BY 
+    ROUTINE_NAME;
+
+-- VERIFICACION DE TRIGGERS
+
+SELECT 
+    TRIGGER_NAME AS `Nombre del Trigger`,
+    EVENT_MANIPULATION AS `Evento`,
+    EVENT_OBJECT_TABLE AS `Tabla`,
+    ACTION_TIMING AS `Momento`
+FROM 
+    INFORMATION_SCHEMA.TRIGGERS
+WHERE 
+    TRIGGER_SCHEMA = 'michangarro'
+ORDER BY 
+    EVENT_OBJECT_TABLE, 
+    ACTION_TIMING, 
+    EVENT_MANIPULATION;

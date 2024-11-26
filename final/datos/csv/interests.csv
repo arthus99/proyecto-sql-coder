@@ -1,0 +1,54 @@
+interest_id,name,description,parent_interest_id
+1,"Electrónica","Gadgets y dispositivos",
+2,"Ropa y Moda","Vestimenta y accesorios",
+3,"Hogar y Muebles","Artículos para el hogar",
+4,"Cuidado Personal y Belleza","Productos de belleza y cuidado personal",
+5,"Alimentos y Bebidas","Comida y bebidas",
+6,"Deportes y Aire Libre","Equipamiento y ropa para actividades al aire libre",
+7,"Productos para Mascotas","Alimentos y accesorios para mascotas",
+8,"Juguetes y Juegos","Artículos de entretenimiento para niños",
+9,"Libros y Papelería","Material de lectura y oficina",
+10,"Salud y Bienestar","Productos para mejorar la salud",
+11,"Ofertas","Promociones y descuentos especiales",
+12,"Eventos Especiales","Ofertas en ocasiones especiales",
+13,"Tendencias y Novedades","Nuevos productos y tendencias del mercado",
+14,"Televisores y Audio","Dispositivos de entretenimiento",1
+15,"Tecnología Móvil","Teléfonos y accesorios móviles",1
+16,"Ropa para Hombres","Ropa diseñada para hombres",2
+17,"Ropa para Mujeres","Ropa diseñada para mujeres",2
+18,"Ropa para Niños","Ropa diseñada para niños",2
+19,"Ropa Deportiva","Vestimenta para actividades deportivas",2
+20,"Accesorios de Moda","Complementos de vestimenta",2
+21,"Muebles para el Hogar","Muebles de diversas categorías",3
+22,"Decoración y Artículos de Limpieza","Elementos decorativos y de limpieza",3
+23,"Herramientas de Jardinería","Herramientas y accesorios para el jardín",3
+24,"Cosméticos y Maquillaje","Productos para el rostro y cuerpo",4
+25,"Productos para el Cuidado de la Piel","Cremas y lociones para la piel",4
+26,"Artículos de Higiene Personal","Productos para la higiene diaria",4
+27,"Comida Fresca","Frutas y verduras frescas",5
+28,"Productos Gourmet","Alimentos de alta calidad",5
+29,"Snacks y Golosinas","Aperitivos y dulces",5
+30,"Equipamiento Deportivo","Artículos para diversos deportes",6
+31,"Ropa de Camping","Vestimenta adecuada para actividades al aire libre",6
+32,"Accesorios para Actividades al Aire Libre","Equipos complementarios para actividades al aire libre",6
+33,"Alimentos para Mascotas","Comida para perros, gatos y otros animales",7
+34,"Juguetes y Accesorios","Artículos para el entretenimiento de mascotas",7
+35,"Cuidado y Salud de Mascotas","Productos para la salud de las mascotas",7
+36,"Juguetes Educativos","Juguetes que fomentan el aprendizaje",8
+37,"Juegos de Mesa y Video","Diversión para toda la familia",8
+38,"Artículos para Fiestas","Decoraciones y juegos para celebraciones",8
+39,"Libros","Literatura de diversos géneros",9
+40,"Material de Oficina","Artículos para el trabajo en oficina",9
+41,"Artículos Escolares","Útiles escolares para estudiantes",9
+42,"Suplementos y Vitaminas","Productos para complementar la dieta",10
+43,"Productos de Fitness","Equipos y artículos para ejercicio",10
+44,"Equipos de Salud y Cuidado","Dispositivos para el monitoreo de salud",10
+45,"Ofertas Semanales","Descuentos que cambian semanalmente",11
+46,"Descuentos por Temporada","Promociones específicas de temporada",11
+47,"Programas de Lealtad","Beneficios para clientes frecuentes",11
+48,"Buen Fin","Promociones especiales en el fin de semana largo",12
+49,"Ofertas de Regreso a Clases","Descuentos en productos escolares",12
+50,"Ventas de Temporada","Ofertas por festividades y estaciones",12
+51,"Nuevos Lanzamientos","Productos recién disponibles en el mercado",13
+52,"Tendencias de Moda","Lo último en moda y estilo",13
+53,"Innovaciones en Tecnología","Avances en tecnología y gadgets",13

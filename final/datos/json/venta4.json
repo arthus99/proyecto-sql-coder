@@ -1,0 +1,22 @@
+{
+  "sales": [
+    {
+      "customer_payment_method_id": "299FF30EA93411EF893F0242AC120002", 
+      "customer_type_discount": 0.00,
+      "items": [
+        {
+          "item_id": "739CCE38A93411EF893F0242AC120002", 
+          "quantity": 1, 
+          "item_price": 79.99, 
+          "item_discount": 5.00
+        },
+        {
+          "item_id": "739CF74CA93411EF893F0242AC120002", 
+          "quantity": 2, 
+          "item_price": 24.99, 
+          "item_discount": 10.00
+        }
+      ]
+    }
+  ]
+}

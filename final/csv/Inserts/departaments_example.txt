@@ -1,0 +1,122 @@
+'Error', '1582', 'Incorrect parameter count in the call to native function \'JSON_EXTRACT\''
+
+1. Electrónicos (ID 1)
+   - Electrodomésticos (ID 2)
+   - Tecnología Móvil (ID 6)
+   - Electrónica de Consumo (ID 10)
+   - Cámaras y Fotografía (ID 13)
+   - Videojuegos (ID 16)
+   - Música (ID 20)
+
+2. Electrodomésticos (ID 2)
+   - Cocinas (ID 3)
+   - Refrigeradores (ID 4)
+   - Lavadoras (ID 5)
+
+6. Tecnología Móvil (ID 6)
+   - Teléfonos (ID 7)
+   - Tabletas (ID 8)
+   - Accesorios Móviles (ID 9)
+
+10. Electrónica de Consumo (ID 10)
+   - Televisores (ID 11)
+   - Audio y Video (ID 12)
+
+13. Cámaras y Fotografía (ID 13)
+   - Cámaras Digitales (ID 14)
+   - Accesorios de Fotografía (ID 15)
+
+16. Videojuegos (ID 16)
+   - Consolas (ID 17)
+   - Juegos (ID 18)
+   - Accesorios para Videojuegos (ID 19)
+
+20. Música (ID 20)
+   - Instrumentos Musicales (ID 21)
+   - Equipos de Audio (ID 22)
+
+23. Ropa (ID 23)
+   - Ropa Deportiva (ID 24)
+   - Ropa Casual (ID 27)
+   - Accesorios de Moda (ID 30)
+
+24. Ropa Deportiva (ID 24)
+   - Calzado Deportivo (ID 25)
+   - Accesorios Deportivos (ID 26)
+
+27. Ropa Casual (ID 27)
+   - Vestidos (ID 28)
+   - Camisetas (ID 29)
+
+31. Hogar y Muebles (ID 31)
+   - Muebles (ID 32)
+   - Artículos de Limpieza (ID 36)
+   - Jardinería (ID 37)
+   - Cocina (ID 40)
+
+32. Muebles (ID 32)
+   - Sofás (ID 33)
+   - Mesas (ID 34)
+   - Sillas (ID 35)
+
+37. Jardinería (ID 37)
+   - Plantas (ID 38)
+   - Herramientas de Jardín (ID 39)
+
+40. Cocina (ID 40)
+   - Utensilios (ID 41)
+   - Electrodomésticos de Cocina (ID 42)
+
+43. Alimentos y Bebidas (ID 43)
+   - Alimentos Frescos (ID 44)
+   - Bebidas (ID 45)
+
+45. Bebidas (ID 45)
+   - Bebidas Alcohólicas (ID 46)
+   - Bebidas No Alcohólicas (ID 47)
+
+48. Salud y Belleza (ID 48)
+   - Cuidado Personal (ID 49)
+   - Salud y Bienestar (ID 52)
+   - Cuidado del Bebé (ID 55)
+
+49. Cuidado Personal (ID 49)
+   - Productos para el Cabello (ID 50)
+   - Productos para la Piel (ID 51)
+
+52. Salud y Bienestar (ID 52)
+   - Suplementos (ID 53)
+   - Productos Naturales (ID 54)
+
+55. Cuidado del Bebé (ID 55)
+   - Alimentos para Bebés (ID 56)
+   - Accesorios para Bebés (ID 57)
+
+58. Juguetes (ID 58)
+   - Juguetes Educativos (ID 59)
+   - Juguetes para Bebés (ID 60)
+   - Juguetes de Construcción (ID 61)
+
+62. Deportes y Aire Libre (ID 62)
+   - Equipos Deportivos (ID 63)
+   - Ropa de Camping (ID 64)
+   - Accesorios de Pesca (ID 65)
+
+66. Automotriz (ID 66)
+   - Accesorios para Automóviles (ID 67)
+   - Herramientas para Automóviles (ID 68)
+
+69. Libros y Papelería (ID 69)
+   - Libros (ID 70)
+   - Material de Oficina (ID 73)
+   - Papelería (ID 74)
+
+70. Libros (ID 70)
+   - Ficción (ID 71)
+   - No Ficción (ID 72)
+
+75. Productos para Mascotas (ID 75)
+   - Alimentos para Mascotas (ID 76)
+   - Accesorios para Mascotas (ID 77)
+   - Juguetes para Mascotas (ID 78)
+

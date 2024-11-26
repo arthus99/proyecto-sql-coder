@@ -1,0 +1,6 @@
+name,description,customer_type_discount
+"Empleado","Descuento de Empleados.",15
+"Cliente Regular","Compras regulares.",0
+"Cliente VIP","Compradores frecuentes que disfrutan de beneficios exclusivos.",5
+
+

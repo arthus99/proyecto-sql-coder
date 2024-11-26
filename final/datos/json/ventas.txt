@@ -1,0 +1,110 @@
+Las cuatro únicas ventas que hemos generado para nuestra base de datos se llaman de la forma:
+
+CALL sp_insert_sales_from_json('{
+  "sales": [
+    {
+      "customer_payment_method_id": "29A007E8A93411EF893F0242AC120002", 
+      "customer_type_discount": 0.00,
+      "items": [
+        {
+          "item_id": "739CABD0A93411EF893F0242AC120002", 
+          "quantity": 1, 
+          "item_price": 1299.99, 
+          "item_discount": 0.00
+        },
+        {
+          "item_id": "739CCBAFA93411EF893F0242AC120002", 
+          "quantity": 1, 
+          "item_price": 39.99, 
+          "item_discount": 0.00
+        },
+        {
+          "item_id": "739CDAC2A93411EF893F0242AC120002", 
+          "quantity": 6, 
+          "item_price": 9.99, 
+          "item_discount": 10.00
+        },
+        {
+          "item_id": "739CB4F3A93411EF893F0242AC120002", 
+          "quantity": 1, 
+          "item_price": 149.99, 
+          "item_discount": 20.00
+        }        
+      ]
+    }
+  ]
+}');
+
+###################################################################333
+CALL sp_insert_sales_from_json('{
+  "sales": [
+    {
+      "customer_payment_method_id": "299FFE8AA93411EF893F0242AC120002", 
+      "customer_type_discount": 10.00,
+      "items": [
+        {
+          "item_id": "739CBC42A93411EF893F0242AC120002", 
+          "quantity": 1, 
+          "item_price": 8.99, 
+          "item_discount": 15.00
+        },
+        {
+          "item_id": "739CC1BAA93411EF893F0242AC120002", 
+          "quantity": 1, 
+          "item_price": 199.99, 
+          "item_discount": 5.00
+        }
+      ]
+    }
+  ]
+}');
+
+##########################################################################33333333333################
+
+CALL sp_insert_sales_from_json('{
+  "sales": [
+    {
+      "customer_payment_method_id": "299FC37AA93411EF893F0242AC120002", 
+      "customer_type_discount": 10.00,
+      "items": [
+        {
+          "item_id": "739CD0BFA93411EF893F0242AC120002", 
+          "quantity": 2, 
+          "item_price": 8.99, 
+          "item_discount": 5.00
+        },
+        {
+          "item_id": "739CDAC2A93411EF893F0242AC120002", 
+          "quantity": 6, 
+          "item_price": 9.99, 
+          "item_discount": 10.00
+        }
+      ]
+    }
+  ]
+}');
+
+###################################################################
+
+ CALL sp_insert_sales_from_json('{
+  "sales": [
+    {
+      "customer_payment_method_id": "299FF30EA93411EF893F0242AC120002", 
+      "customer_type_discount": 0.00,
+      "items": [
+        {
+          "item_id": "739CCE38A93411EF893F0242AC120002", 
+          "quantity": 1, 
+          "item_price": 79.99, 
+          "item_discount": 5.00
+        },
+        {
+          "item_id": "739CF74CA93411EF893F0242AC120002", 
+          "quantity": 2, 
+          "item_price": 24.99, 
+          "item_discount": 10.00
+        }
+      ]
+    }
+  ]
+}');  

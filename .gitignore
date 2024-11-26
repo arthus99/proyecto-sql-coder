@@ -1,6 +1,8 @@
 # Ignorar archivos de entorno
 .env
 .git
+.venv/
 
 # Ignorar directorios de pruebas
 notas/
+borrar/
