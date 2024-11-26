@@ -1,110 +1,70 @@
-# CREACION DE Base de datos
+# CREACION DE BASE DE DATOS
 
-## "miChangarro" TIENDA DEPARTAMENTAL. 
+##  "miChangarro" Tienda Departamental
 
-## Segunda Entrega.
+## Entrega Final.
 
-El archivo de la primera entrega: [click aquí](./primera_entrega/readme.md).
+[Descripción del proyecto](final/md/descripcion.md).
  
-Correcciones Primera Entrega : [Click aquí](./segunda_entrega/correcciones.md).
+[Documentación de los objetos](final/md/objetos.md).
+
+El diagrama de la BD : 
+
+![imagen](final/michangarro.png)
+
+## - Objetos creados en esta BD
+
+Podrá encontrar la descripción de los objetos que se han creado en el archivo [Objetos](final/md/objetos.md). Aquí enumero.
+
+	4 Funciones
+	20 Procedimientos
+	2 Triggers
+	2 Vistas
+	1 Script de python
 
 ## Procedimiento para probar los objetos:  
- 1. Correr el script [miChangarro.sql](./segunda_entrega/scripts/miChangarro.sql)
- 2. Cargar los datos que se encuntran en la carpeta csv.
 
- | Tabla | Archivo |
- |----------|----------|
- | departments | [departments.csv](./segunda_entrega/csv/departments.csv) |
- | departments_closure |  [departments_closure.csv](./segunda_entrega/csv/departments_closure.csv) |
- | interests | [interests.csv](./segunda_entrega/csv/interests.csv) |
+La Base de datos ha sido creada en mysql Workbench y respaldada con mysqldump  Ver 8.0.40 for Linux on x86_64 (MySQL Community Server - GPL).
 
-## Se crearon los siguientes Objetos:
+Se han tenido problemas son "Definer = root" al ejecutarse en windows por lo que tenemos las siguientes opciones.
 
-	- v_interests (vista posibles intereses cliente)
-	- v_departments (vista de departamantos) 
-	- fn_check_interest_cycle
-	- tr_check_interest_before_insert
-	- tr_check_interest_before_update
-	- sp_GetDepartmentByName
-	- sp_GetDepartmentById	
-	- sp_GetDepartmentBranchById
-Y este sp para pruebas: 
+### Opción 1.
 
-	- sp_test_cycle_simulation	
+Usar [michangarro-lnx.sql](final/scripts/michangarro-lnx.sql) que se encuentra en  final/scripts/michangarro-lnx.sql.
+
+	Ejecutar en Workbench:
 	
-# Pruebas: 
-Esta información se encuentra en el archivo [segunda_entrega/scripts/test.sql](./segunda_entrega/scripts/test.sql)
+	SET GLOBAL log_bin_trust_function_creators = 1;
+	Restaurar: michangarro-lnx.sql
+	SET GLOBAL log_bin_trust_function_creators = 0;
 
-**vistas**:
+ ### Opción 2.
  
-    - SELECT * FROM v_interests
-    - SELECT * FROM v_departments
-    
-La **función**:
+ Usar [michangarro.sql](final/scripts/michangarro.sql) que se encuentra en la carpeta final/scripts/michangarro.sql.
+Se respaldo la base de datos con el comando siguiente:
 
-    - fn_check_interest_cycle
-	
-Se prueba con:
-
-	call sp_test_cycle_simulation(1);
-	
-La función anterior verifica que no exista un loop al insertar o actualizar la tabla intereses(modelo lista adjacente) Un loop puede generarse si se tiene como padre a sí mismo o si tiene como padre a un hijo.
-
-Estos son los id's con los que (1) Electrónica podría tener un loop. (el mismo y sus hijos).
-
-| interest_id | name |
-|------------- |------------- |
-|1 | Electrónica |
-| 14 | Televisores y Audio |
-| 15 | Tecnología Móvil |
-
-Los **triggers**:
-
-	- tr_check_interest_before_insert
-	- tr_check_interests_before_update
-	
-
-Verifican que no exista un loop con la función que ya probamos.
 
 ```
--- tr_check_interests_before_update:
-
--- Cambiamos Ropa de niño a Electrónica
-UPDATE interests
-SET parent_interest_id = 1 --Electrónica
-WHERE interest_id = 18; -- Ropa de niño
-
--- Ahora crearemos un ciclo 
--- (Ropa Hombre no puede ser padre de Ropa)
-UPDATE interests
-SET parent_interest_id = 16 --Ropa Hombre
-WHERE interest_id = 2; -- Ropa
-
-SHOW WARNINGS;
+sudo docker exec -i sqlcoder mysqldump -u root -p --databases michangarro --routines --triggers --default-character-set=utf8mb4 --hex-blob > ./michangarro.sql
+sed -i '/DEFINER=/d' ./michangarro.sql
 ```
 
-Ahora probamos los **sp's**:
+ - Restaturar michangarro.
 
-Muestra departamentos por nombre; todos si se le envía NULL:
+### Opción 3.
+Usar el archivo [michangarro-sin-datos.sql](final/scripts/michangarro-sin-datos.sql) el cual se encuentra en final/scripts/michangarro-sin-datos.sql
 
-	call sp_GetDepartmentByName(NULL); 
-	call sp_GetDepartmentByName('Electrónicos'); 
+- Restaurar [michangarro-sin-datos.sql](final/scripts/michangarro-sin-datos.sql)
+- Ejecutar el script [population.sql](final/scripts/population.sql) 
+	
 
-Muestra departamentos por id; muestra todos si se envia NULL:
+# Pruebas: 
+Para facilitar las pruebas puede utilizar el archivo: [final/scripts/test.sql](final/scripts/test.sql)
 
-	call sp_GetDepartmentById(NULL);	-- Todos
-	call sp_GetDepartmentByid(1);		-- Electrónicos
+# Limitaciones:
+Por favor considere:
 
-Muestra la rama del id Correspondiente.
--- 1. Electrónicos es padre de Electrodomésticos, Tectnología movil, etc.
-
-	call sp_GetDepartmentBranchById(1);
-
--- 2. Electrodomésticos a su vez es padre de cocinas, Regrigeradores, etc.
-
-	call sp_GetDepartmentBranchById(2);
-
-
-El diagrama de la BD queda: 
-
-![imagen](./segunda_entrega/images/michangarro.png)
+- La tabla **customer**; El campo password por ahora es almacenado con el algoritmo sha2 de mysql.
+- La tabla **customer_payment_method**; Posee el campo `creditcard` que almacena información sensible y debe ser manejado de acuerdo con las políticas de seguridad. Por ahora sólo esta en binario con números de ejemplo.
+- El Procedimiento  **sp_insert_sales_from_json** es sólo una aproximación; el finalizado debería obtener y modificar algunos campos de la base de datos.
+- El procedimiento **sp_update_department** por ahora no actualiza la relación jerarquica de departamentos.
