@@ -24,7 +24,7 @@ WHERE interest_id = 18; -- Ropa de niño
 
 call sp_test_cycle_simulation(1);  -- Verifique el depto electronica
 
--- Ahora crearemos un ciclo 
+-- Ahora crearemos un ciclo; primero veamos ropa y moda (2) , junto con sus hijos (16-20)
 call sp_test_cycle_simulation(2); -- Ropa y Moda
 -- (Ropa Hombre no puede ser padre de Ropa)
 UPDATE interests
@@ -52,8 +52,6 @@ call sp_GetInterestByDepId(NULL);
 call sp_GetInterestByDepId(3);
 
 -- Selecciona datos del Cliente
--- Si aún no tiene clientes abajo esta el procedimiento sp_add_customer 
--- y el procedimiento para llenar la tabla customer
 CALL sp_sel_customer(NULL); -- Muestra Todos
 CALL sp_sel_customer("jdoe");	-- Muestra Sólo a jdoe
 
@@ -144,54 +142,46 @@ SELECT fn_Authentication('juanperez', 'password2') AS is_authenticated;
 CALL sp_del_customer("juanperez"); -- sólo por username
 CALL sp_sel_customer("juanperez"); -- Muestra
 
--- Procedimiento para llenar la tabla customer
-call sp_create_table_customer_temp();
--- llenar la tabla customer temp con customer_temp.csv
--- ejecutar el store:
-CALL sp_reset_customers;	-- Inserta datos en customers y elimina la tabla customer_temp.
-							-- Observe que customer_temp.csv el password esta límpio h en la
-                            -- tabla customer es binario y  cifrado con hash.
--- Si existe algún error vea:
-show errors;
+-- Procedimiento para llenar la tabla customer (Esto ya se realizò al ingresar los datos lo puede saltar.)
+		call sp_create_table_customer_temp();
+		-- llenar la tabla customer temp con customer_temp.csv
+		-- ejecutar el store:
+		CALL sp_reset_customers;	-- Inserta datos en customers y elimina la tabla customer_temp.
+									-- Observe que customer_temp.csv el password esta límpio h en la
+									-- tabla customer es binario y  cifrado con hash.
+		-- Si existe algún error vea:
+		show errors;
+-- Termina la secciòn
 
  CALL sp_insert_department("Departamento de prueba", 	-- dept_name, 
 		"Descripción del departamento de prueba.",		-- dept_description, 
         NULL												-- parent_id
         );
         
-SELECT LAST_INSERT_ID();
+SELECT LAST_INSERT_ID(); -- 79
 
 CALL sp_insert_department("Hijo departamento de prueba", 	-- dept_name, 
 		"Descripción del departamento de prueba hijo.",		-- dept_description, 
-        80												-- parent_id
+        79												-- parent_id
         );
--- id = 81
+
+SELECT LAST_INSERT_ID(); -- id = 80
 CALL sp_insert_department("Nieto departamento de prueba", 	-- dept_name, 
 		"Descripción del departamento de prueba nieto.",		-- dept_description, 
-        81												-- parent_id
+        80												-- parent_id
         );
 
-call sp_GetDepartmentBranchById(80);
+call sp_GetDepartmentBranchById(79);
 
-CALL sp_delete_department(88);
+CALL sp_delete_department(81); -- borro el nieto de prueba
 
-
-CALL sp_manage_departments(
-    NULL,   										-- ID del departamento
-    "Departamento sin Asignar",      				-- Nombre del departamento
-    "Esta situación se da si se borra un depto.",  	-- Descripción del departamento
-    NULL											-- parent_id   
-    );
-
--- insert departments set department_id = 80, name = 'Departamento de prueba',description = 'Descripción del depa de pruebas';    
--- insert department_closure set ancestor = 80, descendant = 81, depth = 1;
 
 show errors;
 call sp_GetDepartmentBranchById(1);
-call sp_GetDepartmentBranchById(80);
+call sp_GetDepartmentBranchById(79);
 
 -- Por ahora no se actualiza el arbol de departamentos.
-CALL sp_update_department( 80,           	-- Departamento a actualizar
+CALL sp_update_department( 79,           	-- Departamento a actualizar
 							'PRUEB',       -- Nuevo nombre
 							null, 			-- Nueva descripción
 							2); 
@@ -227,5 +217,8 @@ SELECT MAX(sales_id) FROM sales;
 
 -- Muestra el detalle de las compras realizadas
 CALL sp_get_sale_details(1);                         
+
+-- O el que acaba de ingresar que es el sales_id = 2
+CALL sp_get_sale_details(2);   
                             
                             

@@ -413,7 +413,7 @@ VALUES
 (UNHEX('29A00C04A93411EF893F0242AC120002'), 20, 5, UNHEX('5105105105105100'));
 
 
-INSERT INTO item (item_id, item_name, item_description, item_stock, item_price, item_discount, department_id)
+INSERT INTO items (item_id, item_name, item_description, item_stock, item_price, item_discount, department_id)
 VALUES
 (UNHEX('739C9E46A93411EF893F0242AC120002'), 'Smartphone Galaxy', 'Teléfono inteligente con pantalla AMOLED y cámara de 108MP', 50, 999.99, 10.00, 1),
 (UNHEX('739CABD0A93411EF893F0242AC120002'), 'Laptop HP', 'Portátil con procesador i7 y 16GB RAM', 30, 1299.99, 5.00, 1),
